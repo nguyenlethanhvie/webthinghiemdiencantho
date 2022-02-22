@@ -44,6 +44,7 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
 
+                           <img class="mb-5" src="assets/img/bg-masthead.jpg" style="width:50%;height:50%" />
                             <h3 class="mb-5">Tra Cứu Thông Tin Thí Nghiệm</h3>
 
                             <!-- Signup form-->
@@ -83,22 +84,28 @@
                                     var tencongtrinh = document.getElementById("txtcongtrinh").value;
                                     var somahoa = document.getElementById("txtsomahoa").value;
 
-                                    if (noidenghitn != "" && tencongtrinh != "" && somahoa == "") {
-                                        var qr = "select * from c where contains(c.NOIDENGHITN,'txtnoidenghi',true) AND contains(c.TENCONGTRINH,'txtcongtrinh',true)";
+                                    if (somahoa != "") {
+                                        var qr = "select * from c where c.MAYEUCAU = 'txtmayeucau'";
+                                        qr = qr.replace("txtmayeucau", somahoa);
+                                        var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
+                                        window.open(url, '_blank');
+                                    }
 
+                                    else if (noidenghitn != "" && tencongtrinh != "" )
+                                    {
+                                        var qr = "select * from c where contains(c.NOIDENGHITN,'txtnoidenghi',true) AND contains(c.TENCONGTRINH,'txtcongtrinh',true)";
                                         qr = qr.replace("txtnoidenghi", noidenghitn);
                                         qr = qr.replace("txtcongtrinh", tencongtrinh);
                                         var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
                                         window.open(url, '_blank');
                                     }
-                                    else if (somahoa != "")
+                                    else if (noidenghitn != "" && tencongtrinh == "")
                                     {
-                                        var qr = "select * from c where c.MAYEUCAU = 'txtmayeucau'";
-
-                                        qr = qr.replace("txtmayeucau", somahoa);
+                                        var qr = "select * from c where contains(c.NOIDENGHITN,'txtnoidenghi',true) ORDER BY c._ts DESC OFFSET 0 LIMIT 20";
+                                        qr = qr.replace("txtnoidenghi", noidenghitn);
                                         var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
                                         window.open(url, '_blank');
-                                    }
+                                    } 
 
 
                                 }
