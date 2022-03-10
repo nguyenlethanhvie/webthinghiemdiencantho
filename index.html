@@ -96,7 +96,7 @@
                                         var qr = "select * from c where c.MAYEUCAU = 'txtmayeucau'";
                                         qr = qr.replace("txtmayeucau", somahoa);
                                         var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
-                                        window.open(url, '_blank');
+                                        window.open(url, '_self');
                                     }
 
                                     else if (noidenghitn != "" && tencongtrinh != "" )
@@ -105,14 +105,14 @@
                                         qr = qr.replace("txtnoidenghi", noidenghitn);
                                         qr = qr.replace("txtcongtrinh", tencongtrinh);
                                         var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
-                                        window.open(url, '_blank');
+                                        window.open(url, '_self');
                                     }
                                     else if (noidenghitn != "" && tencongtrinh == "")
                                     {
                                         var qr = "select * from c where contains(c.NOIDENGHITN,'txtnoidenghi',true) ORDER BY c._ts DESC OFFSET 0 LIMIT 20";
                                         qr = qr.replace("txtnoidenghi", noidenghitn);
                                         var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
-                                        window.open(url, '_blank');
+                                        window.open(url, '_self');
                                     } 
 
 
