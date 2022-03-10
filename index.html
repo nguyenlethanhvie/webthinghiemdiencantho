@@ -47,7 +47,7 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
 
-                             <h2 class="mb-5">Tra Cứu Thông Tin Thí Nghiệm</h2>
+                            <h2 class="mb-5">Tra Cứu Thông Tin Thí Nghiệm</h2>
 
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
@@ -93,53 +93,59 @@
                                         window.open(url, '_blank');
                                     }
 
-                                    else if (noidenghitn != "" && tencongtrinh != "" )
-                                    {
+                                    else if (noidenghitn != "" && tencongtrinh != "") {
                                         var qr = "select * from c where contains(c.NOIDENGHITN,'txtnoidenghi',true) AND contains(c.TENCONGTRINH,'txtcongtrinh',true)";
                                         qr = qr.replace("txtnoidenghi", noidenghitn);
                                         qr = qr.replace("txtcongtrinh", tencongtrinh);
                                         var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
                                         window.open(url, '_blank');
                                     }
-                                    else if (noidenghitn != "" && tencongtrinh == "")
-                                    {
+                                    else if (noidenghitn != "" && tencongtrinh == "") {
                                         var qr = "select * from c where contains(c.NOIDENGHITN,'txtnoidenghi',true) ORDER BY c._ts DESC OFFSET 0 LIMIT 50";
                                         qr = qr.replace("txtnoidenghi", noidenghitn);
                                         var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
                                         window.open(url, '_blank');
-                                    } 
+                                    }
 
 
                                 }
                             </script>
                             <br />
-                         
-                            <br />
-                            <br />
-                            
-                            <H3>Thư Viện Thông Tin</H3>
-                            
-                            <div class="list-group">
-                           <a style="background-color:rgba(146, 207, 255, 0.5);" class="list-group-item list-group-item-action" href="https://youtu.be/9lPL1XffiLg">Hướng dẫn sử dụng App Mobile Thí Nghiệm Ngoài Hiện Trường</a>
-                           <a style="background-color:rgba(146, 207, 255, 0.5);" class="list-group-item list-group-item-action" href="https://drive.google.com/file/d/1nsV1iI98X4VZc9gyHXT3gtTGnx2FwRNA/view?usp=sharing">Download App Thí Nghiệm Ngoài Hiện Trường</a>
-                           <a style="background-color:rgba(146, 207, 255, 0.5);" class="list-group-item list-group-item-action" href="https://docs.google.com/spreadsheets/d/1kZfQX2520V9-FrG8-60mhrGDETGICUhT/edit?usp=sharing&ouid=113622315154195005457&rtpof=true&sd=true">Tổng Hợp Kế Hoạch CBM 2022</a>
-                           <a style="background-color:rgba(146, 207, 255, 0.5);" class="list-group-item list-group-item-action" href="https://drive.google.com/file/d/11gk-aEIj-Z-Z50pqxIf8Z5hTe-yuEc3B/view?usp=sharing">Bộ VB Hướng Dẫn Quy Trình,Thủ Tục Thí Nghiệm CBM Ngoài Hiện Trường</a>
 
-                                
+                            <br />
+                            <br />
+
+                            <H3>Thư Viện Thông Tin</H3>
+
+                            <div class="list-group">
+                                <b><a style="background-color:rgba(146, 207, 255, 0.5);" class="list-group-item list-group-item-action" href="https://youtu.be/9lPL1XffiLg">Hướng dẫn sử dụng App Mobile Thí Nghiệm Ngoài Hiện Trường</a></b>
+                                <b> <a style="background-color:rgba(146, 207, 255, 0.5);" class="list-group-item list-group-item-action" href="https://drive.google.com/file/d/1nsV1iI98X4VZc9gyHXT3gtTGnx2FwRNA/view?usp=sharing">Download App Thí Nghiệm Ngoài Hiện Trường</a> </b>
+                                <b> <a style="background-color:rgba(146, 207, 255, 0.5);" class="list-group-item list-group-item-action" href="https://docs.google.com/spreadsheets/d/1kZfQX2520V9-FrG8-60mhrGDETGICUhT/edit?usp=sharing&ouid=113622315154195005457&rtpof=true&sd=true">Tổng Hợp Kế Hoạch CBM 2022</a> </b>
+                                <b> <a style="background-color:rgba(146, 207, 255, 0.5);" class="list-group-item list-group-item-action" href="https://drive.google.com/file/d/11gk-aEIj-Z-Z50pqxIf8Z5hTe-yuEc3B/view?usp=sharing">Bộ VB Hướng Dẫn Quy Trình,Thủ Tục Thí Nghiệm CBM Ngoài Hiện Trường</a></b>
+
                             </div>
-                            
-                            
-                            
-                         
+ 
                             <br />
                             <br />
-                            
-                            <p>Website trong quá trình phát triễn</p>
+
+                            <p>Địa chỉ liên hệ:</p>
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1908.4463382817648!2d105.78665128470197!3d10.038625421448158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0882423f8f835%3A0xcd25e49f1e7b41a2!2zQ8O0bmcgdHkgxJBp4buHbiBs4buxYyB0aMOgbmggcGjhu5EgQ-G6p24gVGjGoQ!5e0!3m2!1sen!2s!4v1646924514574!5m2!1sen!2s" style="border:solid" ;" allowfullscreen="" loading="lazy"></iframe>
+
+                            <p>Văn phòng làm việc: Showroom trưng bày Năng Lượng Mặt Trời-Công ty Điện Lực TP Cần Thơ: số 06 Nguyễn Trãi, phường Tân An, quận Ninh Kiều, TP Cần Thơ</p>
+
+
+                            <br />
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4043.0373741021763!2d105.66642462320709!3d10.103999352177228!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4dbdd07cdf3a1560!2zMTDCsDA2JzA5LjUiTiAxMDXCsDM5JzU5LjkiRQ!5e0!3m2!1sen!2s!4v1646924855366!5m2!1sen!2s" style="border:solid;" allowfullscreen="" loading="eager"></iframe>
+
+                            <p>Khu vực thí nghiệm: số 42 lộ Vòng Cung, kv Bình Lập, Phước Thới, quận Ô Môn, TP Cần Thơ</p>
+
+                           
                             <p>Mọi chi tiết xin liên hệ Thanh - Nhân Viên Phòng Kỹ Thuật - 0988 1367 55</p>
 
+
                         </div>
-                    </div>
-                </div>
             </div>
         </header>
 
