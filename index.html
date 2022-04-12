@@ -65,10 +65,6 @@
 
                                     <div class="col">
                                         <p><input class="form-control form-control-lg" id="txtnoidenghitn" type="text" placeholder="Nhập tên khách hàng..." /></p>
-                                        <p><input class="form-control form-control-lg" id="txtcongtrinh" type="text" placeholder="Nhập thông tin công trình..." /></p>
-                                        <br />
-                                        <p><input class="form-control form-control-lg" id="txtsomahoa" type="text" placeholder="Hoặc nhập thẳng số mã hóa được cung cấp...vd: 332.22" /></p>
-
                                     </div>
 
 
@@ -85,31 +81,12 @@
                             <script>
                                 function onlick() {
                                     var noidenghitn = document.getElementById("txtnoidenghitn").value;
-                                    var tencongtrinh = document.getElementById("txtcongtrinh").value;
-                                    var somahoa = document.getElementById("txtsomahoa").value;
+                                  
 
-                                    if (somahoa != "") {
-                                        var qr = "select * from c where c.MAYEUCAU = 'txtmayeucau'";
-                                        qr = qr.replace("txtmayeucau", somahoa);
-                                        var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
+                                    if (noidenghitn != "") {
+                                        var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + noidenghitn;
                                         window.open(url, '_blank');
-                                    }
-
-                                    else if (noidenghitn != "" && tencongtrinh != "") {
-                                        var qr = "select * from c where contains(c.NOIDENGHITN,'txtnoidenghi',true) AND contains(c.TENCONGTRINH,'txtcongtrinh',true)";
-                                        qr = qr.replace("txtnoidenghi", noidenghitn);
-                                        qr = qr.replace("txtcongtrinh", tencongtrinh);
-                                        var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
-                                        window.open(url, '_blank');
-                                    }
-                                    else if (noidenghitn != "" && tencongtrinh == "") {
-                                        var qr = "select * from c where contains(c.NOIDENGHITN,'txtnoidenghi',true) ORDER BY c._ts DESC OFFSET 0 LIMIT 50";
-                                        qr = qr.replace("txtnoidenghi", noidenghitn);
-                                        var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + qr;
-                                        window.open(url, '_blank');
-                                    }
-
-
+                                    } 
                                 }
                             </script>
                             <br />
