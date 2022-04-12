@@ -64,7 +64,7 @@
                                 <div class="row">
 
                                     <div class="col">
-                                        <p><input class="form-control form-control-lg" id="txtnoidenghitn" type="text" placeholder="Nhập tên khách hàng..." /></p>
+                                        <p><input class="form-control form-control-lg" id="txtnoidenghitn" type="text" placeholder="Từ khóa tìm kiếm..." /></p>
                                     </div>
 
 
@@ -80,8 +80,7 @@
                             </form>
                             <script>
                                 function onlick() {
-                                    var noidenghitn = document.getElementById("txtnoidenghitn").value;
-                                  
+                                    var noidenghitn = document.getElementById("txtnoidenghitn").value; 
 
                                     if (noidenghitn != "") {
                                         var url = "https://thongtinyeucaufunction.azurewebsites.net/api/Function_ThongTinYeuCau?yeucau=khachhangtracuu&noidung=" + noidenghitn;
